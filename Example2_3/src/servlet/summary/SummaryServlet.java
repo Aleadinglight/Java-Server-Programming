@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class SummaryServlet extends HttpServlet {
 	String fileName = "registry.txt";
-	String subDirName = "info";
+	String subDirName = "info" ;
 	String filePath;
 	String separator;
 	File filePathDir;
