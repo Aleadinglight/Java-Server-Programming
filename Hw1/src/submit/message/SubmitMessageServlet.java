@@ -32,7 +32,7 @@ public class SubmitMessageServlet extends HttpServlet {
 		 response.setContentType("text/html");
 	  
 		 PrintWriter out=response.getWriter();
-		 //
+		 //git commit --allow-empty --date="Mon Oct 8 10:00 2018 +0100" -m "added submitmessage method"
 	  
 		 out.println("<html>");
 		 out.println("<body>");
