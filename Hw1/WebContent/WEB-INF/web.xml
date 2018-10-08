@@ -6,7 +6,7 @@
     <!-- Define servlets that are included in the example application -->
 
     <servlet><!--Here we declare servlet's registered name -->
-	<servlet-name>HS</servlet-name>
+	<servlet-name>SubmitMessageServlet</servlet-name>
 	<servlet-class>submit.message.SubmitMessageServlet</servlet-class>
 	</servlet>
 
@@ -16,7 +16,7 @@
 
     <servlet-mapping>
 
-    <servlet-name>HS</servlet-name>
+    <servlet-name>SubmitMessageServlet</servlet-name>
 
     <url-pattern>/forum</url-pattern>
 

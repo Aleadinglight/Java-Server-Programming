@@ -37,8 +37,9 @@ public class SubmitMessageServlet extends HttpServlet {
 		 out.println("<html>");
 		 out.println("<body>");
 		  
-		 
-		 out.println("<fieldset><legend><b> " + userName + "</b><i> says at" + calendar + " </i> </legend>" + message + "<fieldset>");
+		 String timestamp = ""+calendar.get(Calendar.DATE)+"/"+calendar.get(Calendar.MONTH)+"/"+calendar.get(Calendar.YEAR)
+		 +" at "+calendar.get(Calendar.HOUR)+":"+calendar.get(Calendar.MINUTE)+":"+calendar.get(Calendar.SECOND);
+		 out.println("<fieldset><legend><b> " + userName + "</b><i> says at" + timestamp + " </i> </legend>" + message + "<fieldset>");
 		 
 		 out.println("<a href='index.html'>Back</a>");
 		 out.println("</body>");
