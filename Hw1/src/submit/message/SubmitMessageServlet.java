@@ -32,17 +32,14 @@ public class SubmitMessageServlet extends HttpServlet {
 		 response.setContentType("text/html");
 	  
 		 PrintWriter out=response.getWriter();
-	  
+		 //
 	  
 		 out.println("<html>");
 		 out.println("<body>");
 		  
-		 if(userName.equals("root") && password.equals("admin")) {
-			 out.println("<p>" + message + ", " + userName + "</p>");
-		 } 
-		 else {
-			 out.println("<p>" + message+ "! "+ userName + " not known! </p>"); 
-		 } 
+		 
+		 out.println("<fieldset><legend><b> " + userName + "</b><i> says at" + calendar + " </i> </legend>" + message + "<fieldset>");
+		 
 		 out.println("<a href='index.html'>Back</a>");
 		 out.println("</body>");
 		 out.println("</html>");
