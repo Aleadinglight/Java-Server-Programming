@@ -11,39 +11,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class SubmitMessageServlet extends HttpServlet {
- 
-	 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	static String forumMessage="";
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 // These come from the html form
-		 String userName=request.getParameter("userName");
-		 String message=request.getParameter("message");
+		String userName=request.getParameter("userName");
+		String message=request.getParameter("message");
 	 
 		 
-		 GregorianCalendar calendar=new GregorianCalendar();
-		 /*
-		 if(calendar.get(Calendar.AM_PM)==Calendar.AM) {
-			 message="Good Morning";
-	   
-		 }
-		 else {
-			 message="Good Afternoon";
-		 } */
+		GregorianCalendar calendar=new GregorianCalendar();
+		// Create timestamp
+		String timestamp = ""+calendar.get(Calendar.DATE)+"/"+calendar.get(Calendar.MONTH)+"/"+calendar.get(Calendar.YEAR)
+		 			+" at "+calendar.get(Calendar.HOUR)+":"+calendar.get(Calendar.MINUTE)+":"+calendar.get(Calendar.SECOND);
+		forumMessage += "<fieldset><legend><b> " + userName + "</b><i> says </i> </legend>" + message + "<br><small><i>" +timestamp+ "</i></small></fieldset><br>";
+		// Set the response content
+		response.setContentType("text/html");
 	  
-		 // Set the response content
-		 response.setContentType("text/html");
+		PrintWriter out=response.getWriter();
+		//git commit --allow-empty --date="Mon Oct 8 10:00 2018 +0100" -m "added submitmessage method"
 	  
-		 PrintWriter out=response.getWriter();
-		 //git commit --allow-empty --date="Mon Oct 8 10:00 2018 +0100" -m "added submitmessage method"
-	  
-		 out.println("<html>");
-		 out.println("<body>");
-		  
-		 String timestamp = ""+calendar.get(Calendar.DATE)+"/"+calendar.get(Calendar.MONTH)+"/"+calendar.get(Calendar.YEAR)
-		 +" at "+calendar.get(Calendar.HOUR)+":"+calendar.get(Calendar.MINUTE)+":"+calendar.get(Calendar.SECOND);
-		 out.println("<fieldset><legend><b> " + userName + "</b><i> says at" + timestamp + " </i> </legend>" + message + "<fieldset>");
-		 
-		 out.println("<a href='index.html'>Back</a>");
-		 out.println("</body>");
-		 out.println("</html>");
-		 out.close();
+		out.println("<html>");
+		out.println("<body>");
+		out.println(forumMessage);
+		out.println("<a href='index.html'>Back</a>");
+		out.println("</body>");
+		out.println("</html>");
+		out.close();
 	}
 }
