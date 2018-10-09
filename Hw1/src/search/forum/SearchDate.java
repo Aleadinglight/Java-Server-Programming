@@ -13,13 +13,13 @@ import java.util.ArrayList;
 import submit.message.Post;
 import submit.message.SubmitMessageServlet;
 
-public class SearchUser extends HttpServlet{
+public class SearchDate extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArrayList<Post> ForumPosts = SubmitMessageServlet.ForumPosts;
 		ArrayList<Post> SearchedPosts = new ArrayList<Post>();
-		String userName=request.getParameter("userName");
+		String date=request.getParameter("date");
 		for (int i=0; i<ForumPosts.size(); i++){
-			if (ForumPosts.get(i).getName().equals(userName)){
+			if (ForumPosts.get(i).getTimeStamp().equals(date)){
 				SearchedPosts.add(ForumPosts.get(i));
 			}
 		}
@@ -31,7 +31,7 @@ public class SearchUser extends HttpServlet{
 		out.println("<html>");
 		out.println("<body>");
 		if (SearchedPosts.size()==0){
-			out.println("No user found!<br>");
+			out.println("No information found!<br>");
 		}
 		else{
 			for (int i = 0; i < SearchedPosts.size(); i++) {
