@@ -22,4 +22,13 @@
     	<servlet-name>SearchUser</servlet-name>
     	<url-pattern>/user</url-pattern>
     </servlet-mapping>
+    
+    <servlet><!--Here we declare servlet's registered name -->
+		<servlet-name>SearchDate</servlet-name>
+		<servlet-class>search.forum.SearchDate</servlet-class>
+	</servlet>
+    <servlet-mapping>
+    	<servlet-name>SearchDate</servlet-name>
+    	<url-pattern>/postByDate</url-pattern>
+    </servlet-mapping>
 </web-app>
