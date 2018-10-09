@@ -19,11 +19,12 @@ public class SubmitMessageServlet extends HttpServlet {
 		String userName=request.getParameter("userName");
 		String message=request.getParameter("message");
 		GregorianCalendar calendar=new GregorianCalendar();
-		// Create timestamp
-		String timestamp = ""+calendar.get(Calendar.DATE)+"/"+calendar.get(Calendar.MONTH)+"/"+calendar.get(Calendar.YEAR)
+		// Create time stamp
+		String timeStamp = ""+calendar.get(Calendar.DATE)+"/"+calendar.get(Calendar.MONTH)+"/"+calendar.get(Calendar.YEAR)
 		 			+" at "+calendar.get(Calendar.HOUR)+":"+calendar.get(Calendar.MINUTE)+":"+calendar.get(Calendar.SECOND);
+		Post newMessage = new Post(userName, message, timeStamp);
+		ForumPosts.add(newMessage);
 		
-		forumMessage += "<fieldset><legend><b> " + userName + "</b><i> says </i> </legend>" + message + "<br><small><i>" +timestamp+ "</i></small></fieldset><br>";
 		// Set the response content
 		response.setContentType("text/html");
 	  
@@ -31,7 +32,10 @@ public class SubmitMessageServlet extends HttpServlet {
 	  
 		out.println("<html>");
 		out.println("<body>");
-		out.println(forumMessage);
+		for (int i = 0; i < ForumPosts.size(); i++) {
+			out.println("<fieldset><legend><b> " + ForumPosts.get(i).getName() + "</b><i> says </i> </legend>" + ForumPosts.get(i).getMessage() 
+					+ "<br><small><i>" +ForumPosts.get(i).getTimeStamp()+ "</i></small></fieldset><br>");
+		}
 		out.println("<a href='index.html'>Back</a>");
 		out.println("</body>");
 		out.println("</html>");
