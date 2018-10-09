@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import submit.message.Post;
 
 public class SubmitMessageServlet extends HttpServlet {
-	static ArrayList<Post> ForumPosts = new ArrayList<Post>();
+	public static ArrayList<Post> ForumPosts = new ArrayList<Post>();
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 // These come from the html form
 		String userName=request.getParameter("userName");
