@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Test forum </title>
+</head>
+
+<body>
+	<h1> Post comment </h1>
+	<form action=formHandler method="POST">
+		<table>
+		<tr><th>User Name</th><td><input type="text" size="40" name="userName" ></td></tr> 
+		<tr><th>message</th><td><textarea rows="4" cols="20" name="message" ></textarea></td></tr> 
+		
+		<tr><th>Favorite sports</th><td>
+		<td><input type="CHECKBOX" name="Sports" value="football">football</td>
+		<td><input type="CHECKBOX" name="Sports" value="basketball">basketball</td>
+		<td><input type="CHECKBOX" name="Sports" value="baseball">baseball</td>
+		<td><input type="CHECKBOX" name="Sports" value="badminton">badminton</td>
+		</tr>
+		<tr><th>Favorite views</th>
+		<td><input type="checkbox" name="views" value="Sunrise">Sunrise</td>
+		<td><input type="checkbox" checked name="views" value="Sunset" />Sunset</td>
+		</tr>
+		<tr><td></td><td><input type="submit" name="action" VALUE="submit"> </td></tr>
+		</table>
+	</form>
+	<h1> Search for user </h1>
+	<form action=formHandler method="POST">
+		<table>
+		<tr><td>User Name: </td> <td><input type="text" size="40" name="searchName"></td></tr>
+		<tr><td></td><td><input type="submit" name="action" VALUE="Search user"> </td></tr>
+		</table>
+	</form>
+	
+	<form action=formHandler method="POST">
+		<table>
+		<tr><td>Date (dd/mm/yyyy): </td> <td><input type="text" size="40" name="searchDate"></td></tr>
+		<tr><td></td><td><input type="submit" name="action" VALUE="Search date"> </td></tr>
+		</table>
+	</form>
+</body>
+</html>

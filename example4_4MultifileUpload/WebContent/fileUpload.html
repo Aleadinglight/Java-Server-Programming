@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type"content="text/html;charset=ISO-8859-1">
+<title>MultipleFileUpload</title>
+</head>
+<body bgcolor="#fffff2">
+<h2>MultipleFileUpload</h2>
+<form action="MultipleFileUploadServlet"method="post"enctype="multipart/form-data">
+<table>
+<tr><th valign="top">Yourname:</th>
+<td><input name="name"type="text"></td></tr>
+<tr><th valign="top">Comment:</th>
+<td><textarea rows="4" cols="20" name="comment"></textarea></td></tr>
+<tr><th valign="top">Please select files:</th>
+<td><input name="fileName"type="file"multiple></td></tr>
+<tr><td></td><td><input type="submit" name="action" value="submit"></td></tr>
+</table>
+</form>
+</body>
+</html>

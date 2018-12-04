@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>e1601140_assignment2</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <description>
+   Assignment 2 of java server programming
+  </description>
+  
+  <!-- Defines servlets that is used in our application-->
+      <servlet> 
+       <!--Here we declare servlet's registered name --> 
+        <servlet-name>formHandler</servlet-name> 
+        <servlet-class>forumHandle.FormHandler</servlet-class> 
+    </servlet>
+  
+    
+    <!-- Here we define the mapping of our servlet-->
+    <servlet-mapping> 
+        <servlet-name>formHandler</servlet-name> 
+        <url-pattern>/formHandler</url-pattern> 
+    </servlet-mapping> 
+   
+  
+</web-app>
