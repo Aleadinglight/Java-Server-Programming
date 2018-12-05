@@ -15,7 +15,7 @@ import submit.message.SubmitMessageServlet;
 
 public class SearchDate extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<Post> ForumPosts = SubmitMessageServlet.ForumPosts;
+		ArrayList<Post> ForumPosts = SubmitMessageServlet.getForumPosts();
 		ArrayList<Post> SearchedPosts = new ArrayList<Post>();
 		String date=request.getParameter("date");
 		for (int i=0; i<ForumPosts.size(); i++){

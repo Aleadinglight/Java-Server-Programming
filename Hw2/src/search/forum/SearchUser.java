@@ -15,7 +15,7 @@ import submit.message.SubmitMessageServlet;
 
 public class SearchUser extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<Post> ForumPosts = SubmitMessageServlet.ForumPosts;
+		ArrayList<Post> ForumPosts = SubmitMessageServlet.getForumPosts();
 		ArrayList<Post> SearchedPosts = new ArrayList<Post>();
 		String userName=request.getParameter("userName");
 		for (int i=0; i<ForumPosts.size(); i++){
