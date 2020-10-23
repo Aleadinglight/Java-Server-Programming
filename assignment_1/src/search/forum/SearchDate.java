@@ -19,7 +19,13 @@ public class SearchDate extends HttpServlet{
 		ArrayList<Post> SearchedPosts = new ArrayList<Post>();
 		String date=request.getParameter("date");
 		for (int i=0; i<ForumPosts.size(); i++){
-			if (ForumPosts.get(i).getTimeStamp().equals(date)){
+			String[] splitTimeStamp = ForumPosts.get(i).getTimeStamp().split(" at ");
+			String splitDate = splitTimeStamp[0]; 
+			String splitTime = splitTimeStamp[1]; 
+			if (splitDate.equals(date)){
+				SearchedPosts.add(ForumPosts.get(i));
+			}
+			else if (splitTime.equals(date)) {
 				SearchedPosts.add(ForumPosts.get(i));
 			}
 		}
