@@ -1,0 +1,71 @@
+<!--This is the HTML form -->
+<html>
+	<head>
+		<title>
+			Forum
+		</title>
+	</head>
+
+<body>
+	<h1>Submit Message</h1>
+	<form action="forum" method="POST">
+		<table>
+			<tr>
+				<td>User Name</td>
+				<td>
+					<input type="text" size="40" name="userName" >
+				</td>
+			</tr>
+			<tr>
+				<td>Message</td>
+				<td>
+					<input type="text" size="40" name="message" >
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit" VALUE="Submit">
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+	<form action="searchUser" method="POST">
+		<h1>Search with user name</h1>
+		<table>
+			<tr>
+				<td>User name</td>
+				<td>
+					<input type="text" size="40" name="userName" >
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit" VALUE="Search">
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+	<form action="searchDate" method="POST">
+		<h1>Search with date</h1>
+		<table>
+			<tr>
+				<td>Date</td>
+				<td>
+					<input type="text" size="40" name="date" >
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit" VALUE="Search">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+
